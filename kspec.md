@@ -27,26 +27,20 @@ A hotel egy megnyert pályázatnak hála jobb marketingeseket tudott fogadni, a 
   * szobafoglalásokat lemondani
   * megnézni aznapra vonatkozó eseményeket (távozás, érkezés).
   * árakat kiszámolni
+ 
+ 
+ | függvény | input | output |  transzformáció | megkötések |
+|---|---|---|---|---|
+| foglalt_leker |  |  | A függvény kiírja a foglalt szobák szobaszámát |  |
+| szabad_leker  |  |  | A függvény kiírja a szabad szobák szobaszámát |  |
+|  foglal | szobaszam, foglalo_ID |  | A függvény megpróbál lefoglalni egy szobát. | A választott szoba nem lehet foglalt |
+| lead | szobaszam, foglalo_ID |  | A függvény megpróbál leadni egy foglalást. | A választott szoba nem lehet szabad, A választott szoba foglaló_ID-je meg kell egyezzen a paraméterben megadott foglalo_ID-vel |
+| esemenyek | nap |  | A függvény kiírja az aznapra vonatkozó eseményket | |
+| ar_kiszamol | szobaszam | ar | A függvény visszatéríti a választott szoba árát. | |
   
- |function|input|output|transformation|constraints|
- |---|---|---|---|
- |foglalt_lekér|  |   | A függvény kiírja a foglalt szobák szobaszámát|  |
- |szabad_lekér|  |   | A függvény kiírja a szabad szobák szobaszámát|  |
- |foglal|szobaszám, foglaló_ID|  | A függvény megpróbál lefoglalni egy szobát. | A választott szoba nem lehet foglalt |
- |lead|szobaszám, foglaló_ID|  |  A függvény megpróbál leadni egy foglalást. | A választott szoba nem lehet szabad, A választott szoba foglaló_ID-je meg kell egyezzen a paraméterben megadott foglaló_ID-vel |
- |esemenyek| nap |  | A függvény kiírja az aznapra vonatkozó eseményket | |
- |ar_kiszamol| szobaszam | ar | A függvény visszatéríti a választott szoba árát. | |
-
 
 ## 5. A rendszerre vonatkozó szabályok
 * A rendszer C++ nyelven íródjon, átlátható, későbbiekben bővítésre alkalmas módon. 
 * Használjon egy jól kialakított adatbázis modellt, amely naprakészen frissül és nem szolgáltat hibás adatokat. 
 * Qt keretrendszerrel könnyen használható, átlátható és igényes GUI felülettel rendelkezzen. 
 
-
-## 6. Követelménylista
-| Modul | ID | Név |  V. | Megjegyzés |
-|---|---|---|---|---|
-|  | K1 | Foglalás | 1.0 | A felhasználó tudjon foglalásokat leadni adott szobákra a megfelelő adatokkal. Ha a választott szoba foglalt, a foglalás sikertelen, és ezt jelezze is. Ha a szoba szabad, és minden adatot helyesen töltött ki, akkor a foglalás elfogadását mutassa, és helyezze el az adatbázisban. |
-|   | K2 | Szabad szobák | 1.0 | Még foglalás előtt a felhasználó tudja megnézni, hogy mely szobák azok, amik az adott időintervallumban még szabadok. |
-|   | K3 | Mai események | 1.0 | Le lehessen kérni, hogy milyen események fognak aznap történni. A távozásokat és az érkezéseket egyaránt nyomon lehessen követni, és kipipálni, ha már megtörtént. |
