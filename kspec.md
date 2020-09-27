@@ -18,16 +18,24 @@ A hotel egy megnyert pályázatnak hála jobb marketingeseket tudott fogadni, a 
 
 
 ## 3. Jelenlegi üzleti folyamatok
-* Foglalások felírása
-* Foglalások lemondása
-* Árak kiszámolása
-
 
 ## 4. Igényelt üzleti folyamatok
 * A felhasználó tudjon:
   * az adatbázisból foglalásokat lekérni,
   * szabad szobákat keresni, 
+  * szobákat foglalni
+  * szobafoglalásokat lemondani
   * megnézni aznapra vonatkozó eseményeket (távozás, érkezés).
+  * árakat kiszámolni
+  
+ |function|input|output|transformation|constraints|
+ |---|---|---|---|
+ |foglalt_lekér|  |   | A függvény kiírja a foglalt szobák szobaszámát|  |
+ |szabad_lekér|  |   | A függvény kiírja a szabad szobák szobaszámát|  |
+ |foglal|szobaszám, foglaló_ID|  | A függvény megpróbál lefoglalni egy szobát. | A választott szoba nem lehet foglalt |
+ |lead|szobaszám, foglaló_ID|  |  A függvény megpróbál leadni egy foglalást. | A választott szoba nem lehet szabad, A választott szoba foglaló_ID-je meg kell egyezzen a paraméterben megadott foglaló_ID-vel |
+ |esemenyek| nap |  | A függvény kiírja az aznapra vonatkozó eseményket | |
+ |ar_kiszamol| szobaszam | ar | A függvény visszatéríti a választott szoba árát. | |
 
 
 ## 5. A rendszerre vonatkozó szabályok
